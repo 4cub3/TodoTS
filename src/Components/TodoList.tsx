@@ -15,7 +15,7 @@ const TodoList: React.FC<TodoListProps> = ({ items, deleteTodo }) => {
       initial={{ opacity: 0, transform: "translateX(5%" }}
       animate={{ opacity: 1, transform: "translateX(0%)" }}
       exit={{ opacity: "0" }}
-      className="bg-slate-800 hover:bg-slate-600 px-4 py-3 rounded-lg m-4 max-w-[12rem] flex  items-center justify-between"
+      className="bg-slate-800 hover:bg-indigo-500 px-4 py-3 rounded-lg m-4 flex  items-center justify-between"
     >
       <Link to={`/task/${item.id}`} className="w-[75%] ">
         <article className="flex">
@@ -34,7 +34,7 @@ const TodoList: React.FC<TodoListProps> = ({ items, deleteTodo }) => {
   ));
   return (
     <AnimatePresence>
-      <ul className="text-white grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 max-h-[40rem] overflow-y-scroll p-2  bg-[rgba(255,255,255,.05)] border border-gray-600 rounded-2xl shadow-2xl mx-4">
+      <ul className="text-white grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 max-h-[40rem] overflow-y-scroll p-2  bg-[rgba(255,255,255,.05)] border border-gray-600 rounded-2xl shadow-2xl mx-4">
         {items.length > 0 ? (
           todos
         ) : (

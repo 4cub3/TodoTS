@@ -53,7 +53,7 @@ const App: React.FC = () => {
         <Task item={generatedTodo}/>
       </Route>
       </Route>
-      <Route path='*'>
+      <Route path='*' exact>
       <div className="bg-slate-950 w-screen h-screen overflow-hidden flex items-center justify-center text-white">
         <p className="text-xl">Page Not found</p>
         </div>

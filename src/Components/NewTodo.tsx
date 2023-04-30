@@ -7,6 +7,8 @@ const NewTodo: React.FC<NewTodoProps> = ({ newTodo }) => {
   const enteredInput = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<boolean>(true);
 
+
+
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     const enteredValue = enteredInput.current!.value;
@@ -14,6 +16,7 @@ const NewTodo: React.FC<NewTodoProps> = ({ newTodo }) => {
       alert("Must have atleast 5 characters");
       
     } else newTodo(enteredValue);
+    enteredInput.current!.value = '';
   };
 
   const changeHandler = (e: React.ChangeEvent) => {
@@ -26,7 +29,7 @@ const NewTodo: React.FC<NewTodoProps> = ({ newTodo }) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className=" mb-5 mx-4">
+    <form onSubmit={submitHandler} className=" mb-5 mx-4" >
       <label htmlFor="todo-text" className="text-white">
         Todo text
       </label>
@@ -40,7 +43,6 @@ const NewTodo: React.FC<NewTodoProps> = ({ newTodo }) => {
             : "bg-slate-700 text-white placeholder:text-slate-400 "
         }`}
         placeholder="Your task here"
-        minLength={5}
         onChange={changeHandler}
       />
 
